@@ -43,8 +43,14 @@ function Sidebar() {
         setActive(path)
     };
 
-    const itemActive = (path) => {
-        return active === path ? 'item active' : 'item'
+    let className;
+    const classNameActive = (path) => {
+        if(active === path){
+            className =  'item active'
+        }else{
+            className =  'item'
+        }
+        return className;
     }
 
     const sideContainerVariants={
@@ -143,7 +149,7 @@ function Sidebar() {
                                         transition={{
                                             type: 'none', duration: 0.2
                                         }}
-                                        key={ route.name } onClick={ () => goToRoute(route.path) } className={itemActive(route.path)}>
+                                        key={ route.name } onClick={ () => goToRoute(route.path) } className={classNameActive(route.path)}>
                                         <motion.div className='icon'>{route.icon}</motion.div>
                                         <motion.span variants = {subheading}>{route.name}</motion.span>
                                     </motion.div>
@@ -166,7 +172,7 @@ function Sidebar() {
                                         transition={{
                                             type: 'none', duration: 0.2
                                         }}
-                                        key={ route.name } onClick={ () => goToRoute(route.path) } className={itemActive(route.path)}>
+                                        key={ route.name } onClick={ () => goToRoute(route.path) } className={classNameActive(route.path)}>
                                         <motion.div className='icon'>{route.icon}</motion.div>
                                         <motion.span variants = {subheading}>{route.name}</motion.span>
                                     </motion.div>
