@@ -44,14 +44,18 @@ function Sidebar() {
     };
 
     let className;
+    // const classNameActive = (path) => {
+    //     if(active === path){
+    //         className =  'item active'
+    //     }else{
+    //         className =  'item'
+    //     }
+    //     return className;
+    // }
     const classNameActive = (path) => {
-        if(active === path){
-            className =  'item active'
-        }else{
-            className =  'item'
+            return active === path ? 'item active' : 'item';
         }
-        return className;
-    }
+
 
     const sideContainerVariants={
         true:{
